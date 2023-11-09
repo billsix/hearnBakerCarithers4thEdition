@@ -39,6 +39,7 @@ class screenPt {
 typedef enum { limacon = 1, cardioid, threeLeaf, fourLeaf, spiral } curveName;
 
 GLsizei winWidth = 600, winHeight = 500;  // Initial display window size.
+int curveNum = 1;
 
 void init(void) {
   glClearColor(1.0, 1.0, 1.0, 1.0);
@@ -170,15 +171,7 @@ void drawCurve(GLint curveNum) {
 }
 
 void displayFcn(void) {
-  GLint curveNum;
-
   glClear(GL_COLOR_BUFFER_BIT);  //  Clear display window.
-
-  cout << "\nEnter the integer value corresponding to\n";
-  cout << "one of the following curve names.\n";
-  cout << "Press any other key to exit.\n";
-  cout << "\n1-limacon, 2-cardioid, 3-threeLeaf, 4-fourLeaf, 5-spiral:  ";
-  cin >> curveNum;
 
   if (curveNum == 1 || curveNum == 2 || curveNum == 3 || curveNum == 4 ||
       curveNum == 5)
@@ -198,6 +191,12 @@ void winReshapeFcn(GLint newWidth, GLint newHeight) {
 }
 
 int main(int argc, char **argv) {
+  cout << "\nEnter the integer value corresponding to\n";
+  cout << "one of the following curve names.\n";
+  cout << "Press any other key to exit.\n";
+  cout << "\n1-limacon, 2-cardioid, 3-threeLeaf, 4-fourLeaf, 5-spiral:  ";
+  cin >> curveNum;
+
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
   glutInitWindowPosition(100, 100);
