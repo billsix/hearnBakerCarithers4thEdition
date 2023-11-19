@@ -85,6 +85,23 @@ if(LINUX)
   target_link_libraries(ch4PieChart OpenGL::GL OpenGL::GLU freeglut)
 endif(LINUX)
 
+
+add_executable(ch4DispLstReshape Chapter4/ch4DispLstReshape.cpp)
+if(APPLE)
+    target_link_libraries(ch4DispLstReshape OpenGL::GL OpenGL::GLU GLUT::GLUT)
+endif(APPLE)
+
+set(BUILD_SHARED_LIBS OFF)
+if(WIN32)
+    # no console on start
+    target_link_options(ch4DispLstReshape PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+endif(WIN32)
+if(LINUX)
+  target_link_libraries(ch4DispLstReshape OpenGL::GL OpenGL::GLU freeglut)
+endif(LINUX)
+
+
+
 add_executable(ch7CompositeTransformation2D Chapter7/ch7CompositeTransformation2D.cpp)
 if(APPLE)
     target_link_libraries(ch7CompositeTransformation2D OpenGL::GL OpenGL::GLU GLUT::GLUT)
@@ -113,7 +130,7 @@ if(LINUX)
   target_link_libraries(ch8ViewingProgram2D OpenGL::GL OpenGL::GLU freeglut)
 endif(LINUX)
 
-install(TARGETS ch3OGLexample ch4CircleVariations ch4LineGraph ch4PieChart ch7CompositeTransformation2D ch8ViewingProgram2D  DESTINATION bin)
+install(TARGETS ch3OGLexample ch4CircleVariations ch4LineGraph ch4PieChart ch4DispLstReshape ch7CompositeTransformation2D ch8ViewingProgram2D  DESTINATION bin)
 
 
 # doesn't build
