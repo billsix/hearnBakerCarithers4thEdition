@@ -76,22 +76,24 @@ void pickRects(GLint button, GLint action, GLint xMouse, GLint yMouse) {
   /*  Save current viewing matrix.  */
   glMatrixMode(GL_PROJECTION);
   glPushMatrix();
-  glLoadIdentity();
+  {
+    glLoadIdentity();
 
-  /*  Obtain the parameters for the current viewport.  Set up
-   *  a 5 x 5 pick window, and invert the input yMouse value
-   *  using the height of the viewport, which is the fourth
-   *  element of vpArray.
-   */
-  glGetIntegerv(GL_VIEWPORT, vpArray);
-  gluPickMatrix(GLdouble(xMouse), GLdouble(vpArray[3] - yMouse), 5.0, 5.0,
-                vpArray);
+    /*  Obtain the parameters for the current viewport.  Set up
+     *  a 5 x 5 pick window, and invert the input yMouse value
+     *  using the height of the viewport, which is the fourth
+     *  element of vpArray.
+     */
+    glGetIntegerv(GL_VIEWPORT, vpArray);
+    gluPickMatrix(GLdouble(xMouse), GLdouble(vpArray[3] - yMouse), 5.0, 5.0,
+                  vpArray);
 
-  gluOrtho2D(0.0, 300.0, 0.0, 300.0);
-  rects(GL_SELECT);  // Process the rectangles in selection mode.
+    gluOrtho2D(0.0, 300.0, 0.0, 300.0);
+    rects(GL_SELECT);  // Process the rectangles in selection mode.
 
-  /*  Restore original viewing matrix.  */
-  glMatrixMode(GL_PROJECTION);
+    /*  Restore original viewing matrix.  */
+    glMatrixMode(GL_PROJECTION);
+  }
   glPopMatrix();
 
   glFlush();

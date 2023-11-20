@@ -22,23 +22,29 @@ void wireQuadSurfs(void) {
 
   /*  Position and display GLUT wire-frame sphere.  */
   glPushMatrix();
-  glTranslatef(1.0, 1.0, 0.0);
-  glutWireSphere(0.75, 8, 6);
+  {
+    glTranslatef(1.0, 1.0, 0.0);
+    glutWireSphere(0.75, 8, 6);
+  }
   glPopMatrix();
 
   /*  Position and display GLUT wire-frame cone.  */
   glPushMatrix();
-  glTranslatef(1.0, -0.5, 0.5);
-  glutWireCone(0.7, 2.0, 7, 6);
+  {
+    glTranslatef(1.0, -0.5, 0.5);
+    glutWireCone(0.7, 2.0, 7, 6);
+  }
   glPopMatrix();
 
   /*  Position and display GLU wire-frame cylinder.  */
   GLUquadricObj* cylinder;  // Set name for GLU quadric object.
   glPushMatrix();
-  glTranslatef(0.0, 1.2, 0.8);
-  cylinder = gluNewQuadric();
-  gluQuadricDrawStyle(cylinder, GLU_LINE);
-  gluCylinder(cylinder, 0.6, 0.6, 1.5, 6, 4);
+  {
+    glTranslatef(0.0, 1.2, 0.8);
+    cylinder = gluNewQuadric();
+    gluQuadricDrawStyle(cylinder, GLU_LINE);
+    gluCylinder(cylinder, 0.6, 0.6, 1.5, 6, 4);
+  }
   glPopMatrix();
 
   glFlush();

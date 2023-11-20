@@ -49,8 +49,10 @@ void displayHex(void) {
   glClear(GL_COLOR_BUFFER_BIT);
 
   glPushMatrix();
-  glRotatef(rotTheta, 0.0, 0.0, 1.0);
-  glCallList(regHex);
+  {
+    glRotatef(rotTheta, 0.0, 0.0, 1.0);
+    glCallList(regHex);
+  }
   glPopMatrix();
 
   glutSwapBuffers();
