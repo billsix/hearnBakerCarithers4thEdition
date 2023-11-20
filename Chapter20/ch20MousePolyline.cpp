@@ -58,7 +58,7 @@ void polyline(GLint button, GLint action, GLint xMouse, GLint yMouse) {
   glFlush();
 }
 
-void main(int argc, char** argv) {
+int main(int argc, char** argv) {
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
   glutInitWindowPosition(100, 100);
@@ -71,4 +71,5 @@ void main(int argc, char** argv) {
   glutMouseFunc(polyline);
 
   glutMainLoop();
+  return 0;
 }

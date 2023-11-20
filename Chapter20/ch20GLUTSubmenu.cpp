@@ -12,7 +12,7 @@ void init(void) {
   gluOrtho2D(0.0, 300.0, 0.0, 300.0);
 }
 
-void mainMenu(GLint renderingOption) {
+int mainMenu(GLint renderingOption) {
   switch (renderingOption) {
     case 1:
       renderingMode = GL_FLAT;
@@ -71,7 +71,7 @@ void reshapeFcn(GLint newWidth, GLint newHeight) {
   glFlush();
 }
 
-void main(int argc, char **argv) {
+int main(int argc, char **argv) {
   GLint subMenu;  //  Identifier for submenu.
 
   glutInit(&argc, argv);
@@ -99,4 +99,5 @@ void main(int argc, char **argv) {
   glutReshapeFunc(reshapeFcn);
 
   glutMainLoop();
+  return 0;
 }

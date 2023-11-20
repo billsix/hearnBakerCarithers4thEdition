@@ -50,7 +50,7 @@ void winReshapeFcn(GLint newWidth, GLint newHeight) {
   glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void main(int argc, char** argv) {
+int main(int argc, char** argv) {
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
   glutInitWindowPosition(100, 100);
@@ -62,4 +62,5 @@ void main(int argc, char** argv) {
   glutReshapeFunc(winReshapeFcn);
 
   glutMainLoop();
+  return 0;
 }

@@ -50,7 +50,7 @@ void reshapeFcn(GLint newWidth, GLint newHeight) {
   glFlush();
 }
 
-void main(int argc, char **argv) {
+int main(int argc, char **argv) {
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
   glutInitWindowPosition(200, 200);
@@ -70,4 +70,5 @@ void main(int argc, char **argv) {
   glutReshapeFunc(reshapeFcn);
 
   glutMainLoop();
+  return 0;
 }

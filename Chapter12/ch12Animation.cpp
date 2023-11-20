@@ -84,7 +84,7 @@ void mouseFcn(GLint button, GLint action, GLint x, GLint y) {
   }
 }
 
-void main(int argc, char** argv) {
+int main(int argc, char** argv) {
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
   glutInitWindowPosition(150, 150);
@@ -97,4 +97,5 @@ void main(int argc, char** argv) {
   glutMouseFunc(mouseFcn);
 
   glutMainLoop();
+  return 0;
 }

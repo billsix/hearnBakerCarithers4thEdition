@@ -120,7 +120,7 @@ void winReshapeFcn(GLint newWidth, GLint newHeight) {
   winHeight = newHeight;
 }
 
-void main(int argc, char** argv) {
+int main(int argc, char** argv) {
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
   glutInitWindowPosition(100, 100);
@@ -133,4 +133,6 @@ void main(int argc, char** argv) {
   glutMouseFunc(pickRects);
 
   glutMainLoop();
+  return 0;
+  return 0;
 }

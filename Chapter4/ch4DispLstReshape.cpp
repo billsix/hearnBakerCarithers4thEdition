@@ -82,4 +82,5 @@ int main(int argc, char** argv) {
   glutReshapeFunc(winReshapeFcn);
 
   glutMainLoop();
+  return 0;
 }
