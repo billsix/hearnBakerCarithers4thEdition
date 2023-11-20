@@ -187,8 +187,7 @@ add_executable(ch20GLUTMenu Chapter20/ch20GLUTMenu.cpp)
 if(APPLE)
     target_link_libraries(ch20GLUTMenu OpenGL::GL OpenGL::GLU GLUT::GLUT)
 endif(APPLE)
-
-set(BUILD_SHARED_LIBS OFF)
+# set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch20GLUTMenu PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
@@ -197,19 +196,18 @@ if(LINUX)
   target_link_libraries(ch20GLUTMenu OpenGL::GL OpenGL::GLU freeglut)
 endif(LINUX)
 
-add_executable(ch20GLUTSubmenu Chapter20/ch20GLUTSubmenu.cpp)
-if(APPLE)
-    target_link_libraries(ch20GLUTSubmenu OpenGL::GL OpenGL::GLU GLUT::GLUT)
-endif(APPLE)
-
-set(BUILD_SHARED_LIBS OFF)
-if(WIN32)
-    # no console on start
-    target_link_options(ch20GLUTSubmenu PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
-endif(WIN32)
-if(LINUX)
-  target_link_libraries(ch20GLUTSubmenu OpenGL::GL OpenGL::GLU freeglut)
-endif(LINUX)
+# add_executable(ch20GLUTSubmenu Chapter20/ch20GLUTSubmenu.cpp)
+#if(APPLE)
+#    target_link_libraries(ch20GLUTSubmenu OpenGL::GL OpenGL::GLU GLUT::GLUT)
+#endif(APPLE)
+## set(BUILD_SHARED_LIBS OFF)
+#if(WIN32)
+#    # no console on start
+#    target_link_options(ch20GLUTSubmenu PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+#endif(WIN32)
+#if(LINUX)
+#  target_link_libraries(ch20GLUTSubmenu OpenGL::GL OpenGL::GLU freeglut)
+#endif(LINUX)
 
 add_executable(ch20KeyboardCurveDrawing Chapter20/ch20KeyboardCurveDrawing.cpp)
 if(APPLE)
@@ -401,7 +399,7 @@ install(TARGETS ch3OGLexample
                 ch13QuadricSurfaces
                 ch14BezierCurve
                 ch20GLUTMenu
-                ch20GLUTSubmenu
+#               ch20GLUTSubmenu
                 ch20KeyboardCurveDrawing
                 ch20MouseKeyboardSquares
                 ch20MousePlotPoint

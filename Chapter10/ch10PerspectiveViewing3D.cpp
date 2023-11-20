@@ -1,4 +1,10 @@
+#ifdef __APPLE__
+#include <glut.h>
+#elif _WIN32
 #include <GL/glut.h>
+#else
+#include <GL/glut.h>
+#endif
 
 GLint winWidth = 600, winHeight = 600;  //  Initial display-window size.
 

@@ -1,4 +1,10 @@
+#ifdef __APPLE__
+#include <glut.h>
+#elif _WIN32
 #include <GL/glut.h>
+#else
+#include <GL/glut.h>
+#endif
 #include <stdio.h>
 
 const GLint pickBuffSize = 32;
