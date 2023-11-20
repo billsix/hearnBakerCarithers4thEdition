@@ -48,17 +48,19 @@ static void init(void) {
    */
   regHex = glGenLists(1);  //  Get an identifier for the display list.
   glNewList(regHex, GL_COMPILE);
-  glColor3f(1.0, 0.0, 0.0);  //  Set fill color for hexagon to red.
-  glBegin(GL_POLYGON);
   {
-    for (k = 0; k < 6; k++) {
-      theta = TWO_PI * k / 6.0;
-      hexVertex.setCoords(circCtr.getx() + 150 * cos(theta),
-                          circCtr.gety() + 150 * sin(theta));
-      glVertex2i(hexVertex.getx(), hexVertex.gety());
+    glColor3f(1.0, 0.0, 0.0);  //  Set fill color for hexagon to red.
+    glBegin(GL_POLYGON);
+    {
+      for (k = 0; k < 6; k++) {
+        theta = TWO_PI * k / 6.0;
+        hexVertex.setCoords(circCtr.getx() + 150 * cos(theta),
+                            circCtr.gety() + 150 * sin(theta));
+        glVertex2i(hexVertex.getx(), hexVertex.gety());
+      }
     }
+    glEnd();
   }
-  glEnd();
   glEndList();
 }
 
