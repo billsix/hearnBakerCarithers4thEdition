@@ -1,5 +1,7 @@
 #include <GL/glut.h>
 
+#include <stdlib.h>
+
 GLsizei winWidth = 400, winHeight = 300;  // Initial display-window size.
 GLint endPtCtr = 0;                       // Initialize line endpoint counter.
 
@@ -9,9 +11,9 @@ class scrPt {
 };
 
 void init(void) {
-  glClearColor(0.0, 0.0, 1.0, 1.0)  // Set display-window color to blue.
+  glClearColor(0.0, 0.0, 1.0, 1.0);  // Set display-window color to blue.
 
-      glMatrixMode(GL_PROJECTION);
+  glMatrixMode(GL_PROJECTION);
   gluOrtho2D(0.0, 200.0, 0.0, 150.0);
 }
 
@@ -39,11 +41,11 @@ void drawLineSegment(scrPt endPt1, scrPt endPt2) {
 void polyline(GLint button, GLint action, GLint xMouse, GLint yMouse) {
   static scrPt endPt1, endPt2;
 
-  if (ptCtr == 0) {
+  if (endPtCtr == 0) {
     if (button == GLUT_LEFT_BUTTON && action == GLUT_DOWN) {
       endPt1.x = xMouse;
       endPt1.y = winHeight - yMouse;
-      ptCtr = 1;
+      endPtCtr = 1;
     } else if (button == GLUT_RIGHT_BUTTON)  // Quit the program.
       exit(0);
   } else if (button == GLUT_LEFT_BUTTON && action == GLUT_DOWN) {

@@ -1,13 +1,13 @@
 #include <GL/glut.h>
-#inclue < stdlib.h>
+#include <stdlib.h>
 
 GLsizei winWidth = 400, winHeight = 300;  // Initial display-window size.
 GLint edgeLength = 10;                    // Initial edge length for square.
 
 void init(void) {
-  glClearColor(0.0, 0.0, 1.0, 1.0)  // Set display-window color to blue.
+  glClearColor(0.0, 0.0, 1.0, 1.0);  // Set display-window color to blue.
 
-      glMatrixMode(GL_PROJECTION);
+  glMatrixMode(GL_PROJECTION);
   gluOrtho2D(0.0, 200.0, 0.0, 150.0);
 }
 
