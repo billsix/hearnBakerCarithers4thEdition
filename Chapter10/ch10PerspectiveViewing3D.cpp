@@ -36,10 +36,12 @@ void displayFcn(void) {
   glPolygonMode(GL_FRONT, GL_FILL);
   glPolygonMode(GL_BACK, GL_LINE);  //  Wire-frame back face.
   glBegin(GL_QUADS);
-  glVertex3f(0.0, 0.0, 0.0);
-  glVertex3f(100.0, 0.0, 0.0);
-  glVertex3f(100.0, 100.0, 0.0);
-  glVertex3f(0.0, 100.0, 0.0);
+  {
+    glVertex3f(0.0, 0.0, 0.0);
+    glVertex3f(100.0, 0.0, 0.0);
+    glVertex3f(100.0, 100.0, 0.0);
+    glVertex3f(0.0, 100.0, 0.0);
+  }
   glEnd();
 
   glFlush();

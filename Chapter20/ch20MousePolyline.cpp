@@ -39,8 +39,10 @@ void winReshapeFcn(GLint newWidth, GLint newHeight) {
 
 void drawLineSegment(scrPt endPt1, scrPt endPt2) {
   glBegin(GL_LINES);
-  glVertex2i(endPt1.x, endPt1.y);
-  glVertex2i(endPt2.x, endPt2.y);
+  {
+    glVertex2i(endPt1.x, endPt1.y);
+    glVertex2i(endPt2.x, endPt2.y);
+  }
   glEnd();
 }
 

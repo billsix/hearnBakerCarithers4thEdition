@@ -37,10 +37,12 @@ void displayTriangle(void) {
   glColor3f(red, green, blue);  //  Set color for first two vertices.
 
   glBegin(GL_TRIANGLES);
-  glVertex2i(280, 20);
-  glVertex2i(160, 280);
-  glColor3f(red, 0.0, 0.0);  // Set color of last vertex to red.
-  glVertex2i(20, 100);
+  {
+    glVertex2i(280, 20);
+    glVertex2i(160, 280);
+    glColor3f(red, 0.0, 0.0);  // Set color of last vertex to red.
+    glVertex2i(20, 100);
+  }
   glEnd();
 
   glFlush();

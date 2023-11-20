@@ -36,7 +36,7 @@ void winReshapeFcn(GLint newWidth, GLint newHeight) {
 
 void plotPoint(GLint x, GLint y) {
   glBegin(GL_POINTS);
-  glVertex2i(x, y);
+  { glVertex2i(x, y); }
   glEnd();
 }
 

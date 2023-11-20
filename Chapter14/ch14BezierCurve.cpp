@@ -27,7 +27,7 @@ void init(void) {
 
 void plotPoint(wcPt3D bezCurvePt) {
   glBegin(GL_POINTS);
-  glVertex2f(bezCurvePt.x, bezCurvePt.y);
+  { glVertex2f(bezCurvePt.x, bezCurvePt.y); }
   glEnd();
 }
 
