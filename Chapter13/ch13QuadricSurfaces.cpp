@@ -54,10 +54,11 @@ void winReshapeFcn(GLint newWidth, GLint newHeight) {
   glViewport(0, 0, newWidth, newHeight);
 
   glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
   glOrtho(-2.0, 2.0, -2.0, 2.0, 0.0, 5.0);
 
   glMatrixMode(GL_MODELVIEW);
-
+  glLoadIdentity();
   glClear(GL_COLOR_BUFFER_BIT);
 }
 

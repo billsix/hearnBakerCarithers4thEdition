@@ -16,7 +16,8 @@ void init(void) {
   glClearColor(1.0, 1.0, 1.0, 1.0);
 
   glMatrixMode(GL_PROJECTION);
-  gluOrtho2D(0.0, 200.0, 0.0, 150.0);
+  glLoadIdentity();
+  55 gluOrtho2D(0.0, 200.0, 0.0, 150.0);
 }
 
 class screenPt {
@@ -118,6 +119,8 @@ void pieChart(void) {
 
 void displayFcn(void) {
   glClear(GL_COLOR_BUFFER_BIT);  //  Clear display window.
+  glMatrixMode(GL_MODELVIEW);
+  glLoadIdentity();
 
   glColor3f(0.0, 0.0, 1.0);  //  Set circle color to blue.
 
