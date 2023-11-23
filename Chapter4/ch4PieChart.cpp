@@ -17,7 +17,7 @@ void init(void) {
 
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
-  55 gluOrtho2D(0.0, 200.0, 0.0, 150.0);
+  gluOrtho2D(0.0, 200.0, 0.0, 150.0);
 }
 
 class screenPt {
