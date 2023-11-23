@@ -8,6 +8,8 @@ Use git to clone https://github.com/billsix/hearnBakerCarithers4thEdition.git .
 This can be done using a standalone git client, or later after you have an IDE
 installed for your Operating System (listed below).
 
+As changes happen over time, learn how to get updates. (i.e., "git pull")
+
 ### Install Dependencies
 
 #### Windows
