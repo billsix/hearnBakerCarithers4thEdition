@@ -7,3 +7,6 @@ cmake --build  . --target all
 cmake --build  . --target install
 
 cd ..
+
+REM open visual studio 
+start build\ALL_BUILD.vcxproj

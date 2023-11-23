@@ -12,6 +12,9 @@ endif()
 set(OpenGL_GL_PREFERENCE LEGACY)
 find_package(OpenGL REQUIRED)
 
+# don't need freeglut demos
+option( FREEGLUT_BUILD_DEMOS "Build FreeGLUT demos." OFF)
+
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/src
   contrib/freeglut/include
   )
@@ -36,6 +39,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch3OGLexample PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+  target_link_libraries(ch3OGLexample OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch3OGLexample OpenGL::GL OpenGL::GLU freeglut)
@@ -51,9 +55,10 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch4CircleVariations PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch4CircleVariations OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
-  target_link_libraries(ch4CircleVariations OpenGL::GL OpenGL::GLU freeglut)
+  target_link_libraries(ch4CircleVariations OpenGL::GL OpenGL::GLU freeglut_static)
 endif(LINUX)
 
 
@@ -66,6 +71,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch4LineGraph PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch4LineGraph OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch4LineGraph OpenGL::GL OpenGL::GLU freeglut)
@@ -80,6 +86,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch4PieChart PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch4PieChart OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch4PieChart OpenGL::GL OpenGL::GLU freeglut)
@@ -94,6 +101,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch7CompositeTransformation2D PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch7CompositeTransformation2D OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch7CompositeTransformation2D OpenGL::GL OpenGL::GLU freeglut)
@@ -108,6 +116,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch8ViewingProgram2D PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch8ViewingProgram2D OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch8ViewingProgram2D OpenGL::GL OpenGL::GLU freeglut)
@@ -122,6 +131,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch10PerspectiveViewing3D PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch10PerspectiveViewing3D OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch10PerspectiveViewing3D OpenGL::GL OpenGL::GLU freeglut)
@@ -136,6 +146,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch12Animation PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch12Animation OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch12Animation OpenGL::GL OpenGL::GLU freeglut)
@@ -150,6 +161,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch13Polyhedron PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch13Polyhedron OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch13Polyhedron OpenGL::GL OpenGL::GLU freeglut)
@@ -164,6 +176,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch13QuadricSurfaces PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch13QuadricSurfaces OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch13QuadricSurfaces OpenGL::GL OpenGL::GLU freeglut)
@@ -178,6 +191,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch14BezierCurve PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch14BezierCurve OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch14BezierCurve OpenGL::GL OpenGL::GLU freeglut)
@@ -191,6 +205,7 @@ endif(APPLE)
 if(WIN32)
     # no console on start
     target_link_options(ch20GLUTMenu PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch20GLUTMenu OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch20GLUTMenu OpenGL::GL OpenGL::GLU freeglut)
@@ -218,6 +233,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch20KeyboardCurveDrawing PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch20KeyboardCurveDrawing OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch20KeyboardCurveDrawing OpenGL::GL OpenGL::GLU freeglut)
@@ -232,6 +248,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch20MouseKeyboardSquares PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch20MouseKeyboardSquares OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch20MouseKeyboardSquares OpenGL::GL OpenGL::GLU freeglut)
@@ -246,6 +263,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch20MousePlotPoint PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch20MousePlotPoint OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch20MousePlotPoint OpenGL::GL OpenGL::GLU freeglut)
@@ -260,6 +278,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch20MousePolyline PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch20MousePolyline OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch20MousePolyline OpenGL::GL OpenGL::GLU freeglut)
@@ -274,6 +293,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch20PickOperations PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch20PickOperations OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch20PickOperations OpenGL::GL OpenGL::GLU freeglut)
@@ -288,6 +308,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch23MandelbrotSet PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch23MandelbrotSet OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch23MandelbrotSet OpenGL::GL OpenGL::GLU freeglut)
@@ -302,6 +323,7 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch23SelfSquaringFractal PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch23SelfSquaringFractal OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch23SelfSquaringFractal OpenGL::GL OpenGL::GLU freeglut)
@@ -316,75 +338,11 @@ set(BUILD_SHARED_LIBS OFF)
 if(WIN32)
     # no console on start
     target_link_options(ch4DispLstReshape PUBLIC "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
+    target_link_libraries(ch4DispLstReshape OpenGL::GL OpenGL::GLU freeglut_static)
 endif(WIN32)
 if(LINUX)
   target_link_libraries(ch4DispLstReshape OpenGL::GL OpenGL::GLU freeglut)
 endif(LINUX)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 install(TARGETS ch3OGLexample
                 ch4CircleVariations
